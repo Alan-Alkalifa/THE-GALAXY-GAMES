@@ -43,7 +43,7 @@ export default function Home() {
 </div>
 
 <div className="-mt-4 bg-[#666666]">
-<h1 class="text-[#3D3D3D] font-bold text-[200px] tracking-widest text-center bg-[#666666]">EXPLORE<br/><span class="text-white text-[40px] absolute top-[397%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-full">Browse All Categories</span></h1>
+<h1 class="text-[#3D3D3D] font-bold text-[200px] tracking-widest text-center bg-[#666666]">EXPLORE<br/><span class="text-white text-[40px] absolute top-[418%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-full">Browse All Categories</span></h1>
 </div>
 
 <div className="bg-[#666666]">
@@ -53,7 +53,7 @@ export default function Home() {
                text-[5vw] md:text-[4vw] lg: lg:text-[100px] xl:text-[150px] 
                text-[#676767]">
     NEW REALEASE  <br/>
-    <span className="text-white absolute top-[493%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 
+    <span className="text-white absolute top-[513%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 
                      text-[2vw] md:text-[1.5vw] lg:py-12 lg:text-[50px] xl:text-[62px]">
       Get New One!</span>
       </h1>

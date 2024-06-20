@@ -10,7 +10,7 @@ const Login = () => {
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-t from-[#656565] to bg-[#0D0D0D]">
         <div className='flex bg-gradient-to-t from-[#292929] to bg-[#111111] rounded-full'>
           <div>
-            <Image src="/card-register.svg" width={450} height={50} alt="card"/>
+            <Image src="/card-login.svg" width={450} height={50} alt="card"/>
           </div>
           <div className="w-full max-w-md p-8 space-y-3 bg-gradient-to-t from-[#292929] to bg-[#111111] rounded-e-3xl shadow-md">
             <h1 className='text-bold text-xl'>Login</h1> 

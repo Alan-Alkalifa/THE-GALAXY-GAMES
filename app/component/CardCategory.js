@@ -1,21 +1,21 @@
 import React from 'react';
 
 const categories = [
-  { name: 'Open world', image: '/card3.svg' },
-  { name: 'Couch multiplayer', image: '/card3.svg' },
-  { name: 'Single player', image: '/card3.svg' },
-  { name: 'Kids and families', image: '/card3.svg' },
-  { name: 'Cozy games', image: '/card3.svg' },
-  { name: 'Platforming', image: '/card3.svg' },
-  { name: 'Strategy', image: '/card3.svg' },
-  { name: 'Rhythm games', image: '/card3.svg' },
-  { name: 'Sports', image: '/card3.svg' },
-  { name: 'Free-to-play', image: '/card3.svg' },
-  { name: 'Stealth', image: '/card3.svg' },
-  { name: 'Fighting games', image: '/card3.svg' },
-  { name: 'Post apocalyptic', image: '/card3.svg' },
-  { name: 'Indies', image: '/card3.svg' },
-  { name: 'Horror', image: '/card3.svg' }
+  { name: 'Open world', image: '/cardCat14.svg' },
+  { name: 'Couch multiplayer', image: '/cardCat13.svg' },
+  { name: 'Single player', image: '/cardCat12.svg' },
+  { name: 'Kids and families', image: '/cardCat11.svg' },
+  { name: 'Cozy games', image: '/cardCat10.svg' },
+  { name: 'Platforming', image: '/cardCat9.svg' },
+  { name: 'Strategy', image: '/cardCat8.svg' },
+  { name: 'Rhythm games', image: '/cardCat7.svg' },
+  { name: 'Sports', image: '/cardCat6.svg' },
+  { name: 'Free-to-play', image: '/cardCat5.svg' },
+  { name: 'Stealth', image: '/cardCat4.svg' },
+  { name: 'Fighting games', image: '/cardCat3.svg' },
+  { name: 'Post apocalyptic', image: '/cardCat2.svg' },
+  { name: 'Indies', image: '/cardCat1.svg' },
+  { name: 'Horror', image: '/cardCat0.svg' }
 ];
 
 const CardCategory = () => {

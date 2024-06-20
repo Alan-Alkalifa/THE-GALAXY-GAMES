@@ -25,7 +25,7 @@ const ForgotPassword = () => {
         <Image src="/tag-card.svg" width={250} height={50} alt="card-tag" className='bg-[#E3E3E3] rounded-full w-full h-9 '/>
        </div>
        <div>
-            <Image src="/card-register.svg" width={450} height={50} alt="card"/>
+            <Image src="/card-forgotpass.svg" width={450} height={50} alt="card"/>
         </div>
       </div>
     </div>

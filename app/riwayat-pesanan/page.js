@@ -6,99 +6,81 @@ import Image from 'next/image';
 const products = [
     {
       id: 1,
-      name: "PlayStation Portal™",
-      image: "/cardCheckout1.svg",
-      image2: "/ps4.svg",
+      image: "/cardPes1.svg",
     },
     {
       id: 2,
-      name: "The Witcher Wild Hunt",
-      image: "/cardCheckout1.svg",
-      image2: "/ps4.svg",
+
+      image: "/cardPes2.svg",
     },
     {
         id: 3,
-        name: "PlayStation Portal™",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+  
+        image: "/cardPes3.svg",
       },
       {
         id: 4,
-        name: "PlayStation Portal™",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+  
+        image: "/cardPes4.svg",
       },
       {
         id: 5,
-        name: "PlayStation Portal™",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+        image: "/cardPes5.svg",
       },
       {
         id: 6,
-        name: "PlayStation Portal™",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+  
+        image: "/cardPes6.svg",
       },
       {
         id: 7,
-        name: "PlayStation Portal™",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+  
+        image: "/cardPes7.svg",
       },
       {
         id: 8,
-        name: "PlayStation Portal™",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+  
+        image: "/cardPes8.svg",
       },
       {
         id: 9,
-        name: "PlayStation Portal™",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+  
+        image: "/cardPes8.svg",
       },
       {
         id: 10,
-        name: "The Witcher Wild Hunt",
-        image: "/cardCheckout1.svg",
-        image2: "/ps4.svg",
+    
+        image: "/cardPes1.svg",
       },
       {
           id: 11,
-          name: "PlayStation Portal™",
-          image: "/cardCheckout1.svg",
-          image2: "/ps4.svg",
+      
+          image: "/cardPes2.svg",
         },
         {
           id: 12,
-          name: "PlayStation Portal™",
-          image: "/cardCheckout1.svg",
-          image2: "/ps4.svg",
+      
+          image: "/cardPes3.svg",
         },
         {
           id: 13,
-          name: "PlayStation Portal™",
-          image: "/cardCheckout1.svg",
-          image2: "/ps4.svg",
+      
+          image: "/cardPes4.svg",
         },
         {
           id: 14,
-          name: "PlayStation Portal™",
-          image: "/cardCheckout1.svg",
-          image2: "/ps4.svg",
+      
+          image: "/cardPes5.svg",
         },
         {
           id: 15,
-          name: "PlayStation Portal™",
-          image: "/cardCheckout1.svg",
-          image2: "/ps4.svg",
+      
+          image: "/cardPes6.svg",
         },
         {
           id: 16,
-          name: "PlayStation Portal™",
-          image: "/cardCheckout1.svg",
-          image2: "/ps4.svg",
+      
+          image: "/cardPes7.svg",
         },
     // Add other products here
   ];

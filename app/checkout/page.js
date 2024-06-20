@@ -16,7 +16,7 @@ const products = [
   {
     id: 2,
     name: "The Witcher Wild Hunt",
-    image: "/cardCheckout1.svg",
+    image: "/cardCek1.svg",
     image2: "/cardCheckoutps4.svg",
     alt: "/cardCheckoutps4.svg",
     description: "PlayStation 5",

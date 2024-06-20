@@ -2,12 +2,12 @@ import React from 'react'
 
 const CardCollection = () => {
     const cards = [
-        { title: "The Last of Us Part II", imageUrl: "/card2.svg", description: "Experience Ellie's journey in the post-apocalyptic United States." },
-        { title: "Marvel's Spider Man 2", imageUrl: "/card2.svg", description: "Join Spider-Man and Miles Morales for a new adventure." },
-        { title: "Gran Turismo 7", imageUrl: "/card2.svg", description: "Race in a hyper-realistic racing simulator." },
-        { title: "Pokémon Scarlet", imageUrl: "/card2.svg", description: "Embark on a new Pokémon adventure in a vibrant open world." },
-        { title: "Pokémon Violet", imageUrl: "/card2.svg", description: "Discover new Pokémon and challenges in another exciting region." },
-        { title: "Kirby and the Forgotten Land", imageUrl: "/card2.svg", description: "Join Kirby in a delightful 3D platforming adventure." }
+      { title: "The Last of Us Part II", imageUrl: "/card2.svg", description: "In a post-apocalyptic world, Joel is tasked with smuggling Ellie, a 14-year-old girl, out of a quarantine zone. What starts as a simple job soon becomes a harrowing journey across the country, facing infected and other survivors." },
+      { title: "Marvel's Spider Man 2", imageUrl: "/cardO1.svg", description: "Join Spider-Men, Peter Parker and Miles Morales, in a new adventure. The sequel to the acclaimed Marvel’s Spider-Man game for PS5 promises more action, deeper narratives, and thrilling gameplay." },
+      { title: "Gran Turismo 7", imageUrl: "/cardO2.svg", description: "Gran Turismo 7 caters to both competitive and casual racers with a vast array of game modes including GT Campaign, Arcade, and Driving School. Dive into a comprehensive racing experience, perfecting your skills and competing at the highest levels." },
+      { title: "Pokémon Scarlet", imageUrl: "/cardO3.svg", description: "Explore a seamless open world where towns merge with untamed wilderness. Encounter Pokémon in diverse environments from skies to seas. Pokémon Scarlet offers an open-world adventure accessible to players of all ages, emphasizing exploration and battles." },
+      {  title: "Pokémon Violet", imageUrl: "/cardO4.svg", description: "Pokémon Violet introduces a new chapter in the Pokémon series. Set in a richly expressed open world, this game allows for unprecedented freedom in exploration. Anticipate a fresh evolutionary step in the Pokémon franchise." },
+      { title: "Kirby and the Forgotten Land", imageUrl: "/cardO5.svg", description: "Join Kirby in a 3D platforming adventure across a mysterious world filled with remnants of a past civilization. Copy abilities from enemies and explore diverse landscapes in this unforgettable journey." }
       ];
       
   return (
@@ -29,12 +29,15 @@ const CardCollection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-bold">{card.title}</h3>
                 <p className="text-sm">{card.description}</p>
-                <button className="mt-4 bg-white hover:bg-slate-200 text-black font-bold py-2 px-4 rounded-full">
-                  Find out more
-                </button>
+              </div>
+              <div>
+              <button className="p-4 mx-2 bottom-full bg-white hover:bg-slate-200 text-black font-bold py-2 px-4 end-0 rounded-full">
+              Find out more
+              </button>
               </div>
             </div>
           ))}
+          
         </div>
       </div>
       <h1 className='text-white text-center text-[20px] m-4'>SEE FOR MORE</h1>

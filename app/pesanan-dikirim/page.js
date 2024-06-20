@@ -16,33 +16,33 @@ const cardData = [
   },
   {
     id: 2,
-    profile: "/dump-profile.svg",
-    username: "Minjayyy03",
-    paymentStatus: "Lunas",
-    paymentMethod: "Mandiri",
-    shipmentTracking: "32473285",
+    profile: "/prof1.svg",
+    username: "JAYanggg17",
+    paymentStatus: "Belum Lunas",
+    paymentMethod: "BCA",
+    shipmentTracking: "98765432",
     status: "Sedang Packing",
-    imagePaths: ["/figure-1.svg", "/figure-2.svg", "/figure-3.svg", "/figure-4.svg"]
+    imagePaths: ["/g1.svg", "/g2.svg", "/f3.svg", "/g4.svg"]
   },
   {
     id: 3,
-    profile: "/dump-profile.svg",
-    username: "Minjayyy03",
+    profile: "/prof2.svg",
+    username: "Jugwoon aja bang",
     paymentStatus: "Lunas",
-    paymentMethod: "Mandiri",
-    shipmentTracking: "32473285",
+    paymentMethod: "BRI",
+    shipmentTracking: "102938475",
     status: "Sedang Packing",
-    imagePaths: ["/figure-1.svg", "/figure-2.svg", "/figure-3.svg", "/figure-4.svg"]
+    imagePaths: ["/f1.svg", "/f2.svg", "/f3.svg", "/f4.svg"]
   },
   {
     id: 4,
-    profile: "/dump-profile.svg",
-    username: "Minjayyy03",
+    profile: "/prof3.svg",
+    username: "Yujin Nomu Kiyowo",
     paymentStatus: "Lunas",
-    paymentMethod: "Mandiri",
-    shipmentTracking: "32473285",
+    paymentMethod: "DANA",
+    shipmentTracking: "192837465",
     status: "Sedang Packing",
-    imagePaths: ["/figure-1.svg", "/figure-2.svg", "/figure-3.svg", "/figure-4.svg"]
+    imagePaths: ["/h1.svg", "/h2.svg", "/h3.svg", "/H4.svg"]
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const cardData = [
   },
   {
     id: 6,
-    profile: "/dump-profile.svg",
+    profile: "/prof1.svg",
     username: "Minjayyy03",
     paymentStatus: "Lunas",
     paymentMethod: "Mandiri",
@@ -66,7 +66,7 @@ const cardData = [
   },
   {
     id: 7,
-    profile: "/dump-profile.svg",
+    profile: "/prof2.svg",
     username: "Minjayyy03",
     paymentStatus: "Lunas",
     paymentMethod: "Mandiri",
@@ -76,7 +76,7 @@ const cardData = [
   },
   {
     id: 8,
-    profile: "/dump-profile.svg",
+    profile: "/prof3.svg",
     username: "Minjayyy03",
     paymentStatus: "Lunas",
     paymentMethod: "Mandiri",
@@ -116,11 +116,11 @@ const PesananDikirim = () => {
                 </div>
 
                 <div className='flex justify-normal gap-4 py-2'>
-                  <div className='grid grid-cols-2 p-5 rounded-lg w-auto bg-white bg-opacity-30'>
-                    <img src={card.imagePaths[0]} alt="Image 1" />
-                    <img src={card.imagePaths[1]} alt="Image 2" />
-                    <img src={card.imagePaths[2]} alt="Image 3" />
-                    <img src={card.imagePaths[3]} alt="Image 4" />
+                  <div className='grid grid-cols-2 p-5 rounded-lg gap-1 w-auto bg-white bg-opacity-30'>
+                    <img src={card.imagePaths[0]} alt="Image 1" className='object-contain'/>
+                    <img src={card.imagePaths[1]} alt="Image 2" className='object-contain'/>
+                    <img src={card.imagePaths[2]} alt="Image 3" className='object-contain'/>
+                    <img src={card.imagePaths[3]} alt="Image 4" className='object-contain'/>
                   </div>
                   <div className='flex flex-col gap-4 px-8'>
                     <p className="text-white text-base ">

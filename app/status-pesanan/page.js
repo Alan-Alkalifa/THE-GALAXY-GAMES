@@ -15,23 +15,23 @@ const orders = [
   {
     id: 2,
     name: "The Witcher Wild Hunt",
-    image: "/cardCheckout1.svg",
+    image: "/cardCek1.svg",
     image2: "/ps4.svg",
     status: "Proses sedang dijalan",
     trackingNumber: "2355778"
   },
   {
     id: 3,
-    name: "Xbox Series X",
-    image: "/cardCheckout1.svg",
+    name: "Play Station 4",
+    image: "/cardAcc5.svg",
     image2: "/ps4.svg",
     status: "Dikirim",
     trackingNumber: "2355779"
   },
   {
     id: 4,
-    name: "Nintendo Switch",
-    image: "/cardCheckout1.svg",
+    name: "Steering Wheel",
+    image: "/cardAcc3.svg",
     image2: "/ps4.svg",
     status: "Dikirim",
     trackingNumber: "2355780"
