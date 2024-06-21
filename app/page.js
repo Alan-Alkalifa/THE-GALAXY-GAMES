@@ -31,14 +31,14 @@ export default function Home() {
 </div>
 
 <div className="bg-[#666666] -mt-5 flex justify-center ">
- <img src="/accesories.svg" alt="banner-1" width={1300} height={0} className="image-responsive center lg:p-10 md:p-10 sm:p-10 sm:top-0"/>
+ <img src="/explore.svg" alt="banner-1" width={1300} height={0} className="image-responsive center lg:p-10 md:p-10 sm:p-10 sm:top-0"/>
 </div>
 
 <div className="bg-[#666666]">
 <CardCategory/>
 
 <div className="bg-[#666666] -mt-5 flex justify-center ">
- <img src="/explore.svg" alt="banner-1" width={1300} height={0} className="image-responsive center lg:p-10 md:p-10 sm:p-10 sm:top-0"/>
+ <img src="/accesories.svg" alt="banner-1" width={1300} height={0} className="image-responsive center lg:p-10 md:p-10 sm:p-10 sm:top-0"/>
 </div>
 </div>
 
