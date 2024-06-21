@@ -24,9 +24,9 @@ const HomeNav = () => {
   }, []);
 
   return (
-    <nav className="bg-black text-white px-4 py-10 flex flex-col sm:flex-row">
+    <nav className="bg-black text-white px-5 py-10 flex flex-col sm:flex-row">
       <div className='w-full'>
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-x-10">
           {/* Logo and title */}
           <button href="/"><div className="flex items-center space-x-4 mb-4 sm:mb-0">
             <Image
@@ -67,8 +67,8 @@ const HomeNav = () => {
               <Link href="/pesanan-baru">
                 <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan-Baru</p>
               </Link>
-              <Link href="/list-ps5">
-                <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Produk</p>
+              <Link href="/kelola-produk">
+                <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kelola Produk</p>
               </Link>
             </div>
             )}

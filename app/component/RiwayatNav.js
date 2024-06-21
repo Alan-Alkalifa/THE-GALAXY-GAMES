@@ -68,8 +68,8 @@ const RiwayatNav = () => {
                 <Link href="/pesanan-baru">
                   <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan-Baru</p>
                 </Link>
-                <Link href="/list-ps5">
-                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Produk</p>
+                <Link href="/kelola-produk">
+                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kelola Produk</p>
                 </Link>
               </div>
             )}
