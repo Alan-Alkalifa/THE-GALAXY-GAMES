@@ -44,14 +44,14 @@ import Link from 'next/link';
                   <Link href="/riwayat-pesanan">
                     <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Riwayat Pesanan</p>
                   </Link>
-                  <Link href="/status-pesanan">
-                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Pesanan</p>
+                  <Link href="/status-produk">
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Produk</p>
                   </Link>
-                  <Link href="/pesanan-dikirim">
-                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan Dikirim</p>
+                  <Link href="/pesanan-baru">
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan-Baru</p>
                   </Link>
                   <Link href="/list-ps5">
-                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Pesanan</p>
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Produk</p>
                   </Link>
                 </div>
               )}

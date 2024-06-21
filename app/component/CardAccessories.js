@@ -62,8 +62,10 @@ const CardAccessories = () => {
       </div>
     </div>
 
+    
     <div className="grid grid-cols-1 grid-row-3 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
       {products.map((product, index) => (
+        <button className=' transition duration-300 hover:scale-95'>
         <div key={index} className="bg-[#DCDCDC] shadow-lg rounded-lg overflow-hidden ">
           <img src={product.imageUrl} alt={product.title} className=" w-full h-48  p-4 object-contain"/>
           <div className="p-4">
@@ -71,6 +73,7 @@ const CardAccessories = () => {
             <p className='text-black'>{product.description}</p>
           </div>
         </div>
+        </button>
       ))}
     </div>
     </>

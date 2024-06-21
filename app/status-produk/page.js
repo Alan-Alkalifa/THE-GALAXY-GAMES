@@ -38,7 +38,7 @@ const orders = [
   }
 ];
 
-const StatusPesanan = () => {
+const StatusProduk = () => {
   const [visibleCount, setVisibleCount] = useState(2);
 
   const loadMore = () => {
@@ -83,4 +83,4 @@ const StatusPesanan = () => {
     </>
   )
 }
-export default StatusPesanan
+export default StatusProduk

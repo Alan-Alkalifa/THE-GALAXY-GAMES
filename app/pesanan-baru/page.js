@@ -22,7 +22,7 @@ const cardData = [
     paymentMethod: "BCA",
     shipmentTracking: "98765432",
     status: "Sedang Packing",
-    imagePaths: ["/g1.svg", "/g2.svg", "/f3.svg", "/g4.svg"]
+    imagePaths: ["/g1.svg", "/f2.svg", "/f3.svg", "/g4.svg"]
   },
   {
     id: 3,
@@ -116,11 +116,11 @@ const PesananDikirim = () => {
                 </div>
 
                 <div className='flex justify-normal gap-4 py-2'>
-                  <div className='grid grid-cols-2 p-5 rounded-lg gap-1 w-auto bg-white bg-opacity-30'>
-                    <img src={card.imagePaths[0]} alt="Image 1" className='object-contain'/>
-                    <img src={card.imagePaths[1]} alt="Image 2" className='object-contain'/>
-                    <img src={card.imagePaths[2]} alt="Image 3" className='object-contain'/>
-                    <img src={card.imagePaths[3]} alt="Image 4" className='object-contain'/>
+                  <div className='grid grid-cols-2 p-2 rounded-lg gap-1 w-auto bg-white bg-opacity-30'>
+                    <img src={card.imagePaths[0]} alt="Image 1" className=''/>
+                    <img src={card.imagePaths[1]} alt="Image 2" className=''/>
+                    <img src={card.imagePaths[2]} alt="Image 3" className=''/>
+                    <img src={card.imagePaths[3]} alt="Image 4" className=''/>
                   </div>
                   <div className='flex flex-col gap-4 px-8'>
                     <p className="text-white text-base ">
@@ -129,7 +129,7 @@ const PesananDikirim = () => {
                       Resi Pengiriman: {card.shipmentTracking}<br/>
                       Status: {card.status}
                     </p>
-                    <button className="bg-green-400 hover:bg-green-500 text-black font-bold py-2 px-4 rounded-full">
+                    <button className="bg-green-400 hover:bg-green-500 text-black font-bold py-2 w-fitt px-4 rounded-full">
                       Confirm to send product
                     </button>
                     <p className='text-whire text-end'>See more details</p>

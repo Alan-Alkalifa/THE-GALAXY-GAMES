@@ -20,14 +20,19 @@ const categories = [
 
 const CardCategory = () => {
   return (
+    
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-5 p-10 mx-20">
       {categories.map((category) => (
-        <div key={category.name} className="relative">
-          <img src={category.image} alt={category.name} className="w-full h-full object-cover rounded-lg" />
-          <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 text-white font-bold text-center py-2">
-            {category.name}
-          </div>
-        </div>
+// ... existing code ...
+<button className="transform transition duration-500 ease-in-out hover:scale-110">
+  <div key={category.name} className="relative">
+    <img src={category.image} alt={category.name} className="w-full h-full object-cover rounded-lg" />
+    <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 text-white font-bold text-center py-2">
+      {category.name}
+    </div>
+  </div>
+</button>
+// ... existing code ...
       ))}
     </div>
   );
