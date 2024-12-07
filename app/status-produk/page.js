@@ -46,41 +46,93 @@ const StatusProduk = () => {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-t from-[#6C6C6C] to-black">
       <RiwayatNav/>
-      <h1 className='p-10 text-[100px] font-bold text-center text-green-400 opacity-50'>STATUS PRODUK</h1>
+      
+      {/* Responsive Header */}
+      <h1 className='p-4 md:p-10 text-4xl md:text-[100px] font-bold text-center text-green-400 opacity-50 leading-tight'>
+        STATUS PRODUK
+      </h1>
 
-      <div className='flex items-center justify-between px-20'>
-          <p className='text-center font-bold text-3xl'>Kimchipantha</p>
-          <Image src='/profileCheckout.svg' alt='kimchipantha' width={100} height={100}/>
+      {/* Profile Section */}
+      <div className='flex items-center justify-between px-4 md:px-20 py-4'>
+        <p className='text-center font-bold text-xl md:text-3xl'>Kimchipantha</p>
+        <div className='relative w-16 h-16 md:w-[100px] md:h-[100px]'>
+          <Image 
+            src='/profileCheckout.svg' 
+            alt='kimchipantha profile'
+            fill
+            className='object-cover'
+          />
+        </div>
       </div>
 
-      <p className='border-t px-32 mx-20 mt-3'></p>
+      {/* Divider */}
+      <div className='border-t border-gray-600 mx-4 md:mx-20'></div>
       
-      <div className='grid grid-cols-2 gap-10 p-10'>
+      {/* Orders Grid */}
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 p-4 md:p-10'>
         {orders.slice(0, visibleCount).map(order => (
-          <div key={order.id} className="order-card bg-gradient-radial from-[#6C6C6C] to-[#343434] p-6 mx-10 rounded-lg">
-            <Image src={order.image2} alt={order.name} width={300} height={347} className='inline-end'/>
-            <Image src={order.image} alt={order.name} width={700} height={347} className='ml-5 p-5'/>
-            <div className="order-info">
-              <h3>{order.name}</h3>
-              <p>Status: <span className='text-green-400'>{order.status}</span></p>
-              <p>No Resi: <span className='text-green-400'>{order.trackingNumber}</span></p>
+          <div 
+            key={order.id} 
+            className="order-card bg-gradient-radial from-[#6C6C6C] to-[#343434] p-4 md:p-6 rounded-lg shadow-lg"
+          >
+            {/* Product Images */}
+            <div className="relative flex flex-col md:flex-row items-center gap-4">
+              <div className="relative w-full md:w-1/3 aspect-square">
+                <Image 
+                  src={order.image2} 
+                  alt={`${order.name} console`}
+                  fill
+                  className='object-contain'
+                />
+              </div>
+              <div className="relative w-full md:w-2/3 aspect-[16/9]">
+                <Image 
+                  src={order.image} 
+                  alt={order.name}
+                  fill
+                  className='object-contain'
+                />
+              </div>
+            </div>
+
+            {/* Order Info */}
+            <div className="order-info mt-4 space-y-2 text-white">
+              <h3 className="text-lg md:text-xl font-bold">{order.name}</h3>
+              <p className="text-sm md:text-base">
+                Status: <span className='text-green-400'>{order.status}</span>
+              </p>
+              <p className="text-sm md:text-base">
+                No Resi: <span className='text-green-400'>{order.trackingNumber}</span>
+              </p>
             </div>
           </div>
         ))}
       </div>
 
+      {/* Load More Button */}
       {visibleCount !== 0 && (
-        <div className="flex justify-center">
-          <Image src='/arrow-down.svg' alt='arrow-down-on-square' width={20} height={20}/>
-          <button onClick={loadMore} className="my-5 text-white font-bold py-2 px-4 rounded flex justify-center items-center">
-              {visibleCount > 2 ? 'Please clickk to show less' : 'Please clickk to show more'}
+        <div className="flex flex-col items-center justify-center p-6 space-y-2">
+          <button 
+            onClick={loadMore} 
+            className="group flex items-center gap-2 py-2 px-4 rounded-full hover:bg-gray-700/30 transition-colors"
+          >
+            <Image 
+              src='/arrow-down.svg' 
+              alt='Toggle view' 
+              width={20} 
+              height={20}
+              className={`transform transition-transform duration-300 ${visibleCount > 2 ? 'rotate-180' : ''}`}
+            />
+            <span className="text-sm md:text-base text-white font-medium">
+              {visibleCount > 2 ? 'Show Less' : 'Show More'}
+            </span>
           </button>
-          
         </div>
       )}
-    </>
+    </div>
   )
 }
+
 export default StatusProduk

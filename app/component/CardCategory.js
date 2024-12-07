@@ -20,20 +20,28 @@ const categories = [
 
 const CardCategory = () => {
   return (
-    
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-5 p-10 mx-20">
-      {categories.map((category) => (
-// ... existing code ...
-<button className="transform transition duration-500 ease-in-out hover:scale-110">
-  <div key={category.name} className="relative">
-    <img src={category.image} alt={category.name} className="w-full h-full object-cover rounded-lg" />
-    <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 text-white font-bold text-center py-2">
-      {category.name}
-    </div>
-  </div>
-</button>
-// ... existing code ...
-      ))}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+        {categories.map((category) => (
+          <button 
+            key={category.name}
+            className="group relative w-full aspect-square transform transition duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 rounded-lg overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity group-hover:bg-opacity-30">
+              <img 
+                src={category.image} 
+                alt={category.name} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-white font-bold text-center px-2 py-1 text-sm sm:text-base md:text-lg bg-black bg-opacity-50 rounded-full">
+                {category.name}
+              </span>
+            </div>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

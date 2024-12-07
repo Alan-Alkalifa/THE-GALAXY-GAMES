@@ -5,16 +5,21 @@ import Image from 'next/image';
 
 const RiwayatNav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   // Function to toggle dropdown visibility
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-  // Function to close dropdown if clicked outside
+  // Function to close dropdown and mobile menu if clicked outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
+      }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
       }
     }
 
@@ -22,62 +27,125 @@ const RiwayatNav = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [dropdownRef]);
+  }, []);
 
   return (
-    <nav className="bg-black text-white p-10 flex flex-row">
-      <div className='w-full'>
-        <div className="container mx-auto flex items-center justify-between">
-          {/* Logo and title */}
-          <Link href='/'><div className="flex items-center space-x-4">
-            <Image
-             src="/Logo.svg" 
-             width={50}
-             height={50}
-             alt="Logo" 
-             className="h-8" />
-            <span className="font-bold text-lg">THE GALAXY GAMES</span>
-          </div>
-          </Link>
-<div className='flex space-x-20'>
-          <Link href="/"><p>GAMES</p></Link>
-          <Link href="/"><p>ACCESSORIES</p></Link>
-          <Link href="/"><p>CARD</p></Link>
-          <Link href="/"><p>FAVORIT</p></Link>
+    <nav className="bg-black text-white p-4 md:p-10">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+          {/* Logo, title and mobile menu button */}
+          <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
+            <Link href='/'>
+              <div className="flex items-center space-x-2 md:space-x-4">
+                <Image
+                  src="/Logo.svg" 
+                  width={40}
+                  height={40}
+                  alt="Logo" 
+                  className="h-6 md:h-8 w-auto"
+                />
+                <span className="font-bold text-sm md:text-lg">THE GALAXY GAMES</span>
+              </div>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2 hover:bg-gray-700 rounded"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <div className="space-y-1">
+                <div className="w-6 h-0.5 bg-white"></div>
+                <div className="w-6 h-0.5 bg-white"></div>
+                <div className="w-6 h-0.5 bg-white"></div>
+              </div>
+            </button>
           </div>
 
-          <div className="relative">
-            <button className="px-15 rounded hover:bg-gray-700 text-white" onClick={toggleDropdown}>
-              <Image 
-              src='/Settings.svg'
-              width={25}
-              height={25}
-              alt='Icon Settings' />
-            </button>
-            {isDropdownOpen && (
-              <div ref={dropdownRef} className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-50">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            <div className='flex space-x-8'>
+              <Link href="/" className="hover:text-gray-300">GAMES</Link>
+              <Link href="/" className="hover:text-gray-300">ACCESSORIES</Link>
+              <Link href="/" className="hover:text-gray-300">CARD</Link>
+              <Link href="/" className="hover:text-gray-300">FAVORIT</Link>
+            </div>
+
+            <div className="relative">
+              <button 
+                className="p-2 rounded hover:bg-gray-700 text-white"
+                onClick={toggleDropdown}
+              >
+                <Image 
+                  src='/Settings.svg'
+                  width={25}
+                  height={25}
+                  alt='Icon Settings'
+                />
+              </button>
+              {isDropdownOpen && (
+                <div ref={dropdownRef} className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-50">
+                  <Link href="/checkout">
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Checkout</p>
+                  </Link>
+                  <Link href="/riwayat-pesanan">
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Riwayat Pesanan</p>
+                  </Link>
+                  <Link href="/status-produk">
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Produk</p>
+                  </Link>
+                  <Link href="/pesanan-baru">
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan-Baru</p>
+                  </Link>
+                  <Link href="/kelola-produk">
+                    <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kelola Produk</p>
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div 
+              ref={mobileMenuRef}
+              className="md:hidden w-full mt-4 bg-gray-900 rounded-lg p-4"
+            >
+              <div className="flex flex-col space-y-3">
+                <Link href="/">
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">GAMES</p>
+                </Link>
+                <Link href="/">
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">ACCESSORIES</p>
+                </Link>
+                <Link href="/">
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">CARD</p>
+                </Link>
+                <Link href="/">
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">FAVORIT</p>
+                </Link>
+                <div className="border-t border-gray-700 my-2"></div>
                 <Link href="/checkout">
-                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Checkout</p>
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Checkout</p>
                 </Link>
                 <Link href="/riwayat-pesanan">
-                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Riwayat Pesanan</p>
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Riwayat Pesanan</p>
                 </Link>
                 <Link href="/status-produk">
-                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Status Produk</p>
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Status Produk</p>
                 </Link>
                 <Link href="/pesanan-baru">
-                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pesanan-Baru</p>
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Pesanan-Baru</p>
                 </Link>
                 <Link href="/kelola-produk">
-                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kelola Produk</p>
+                  <p className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Kelola Produk</p>
                 </Link>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default RiwayatNav;

@@ -1,246 +1,141 @@
 'use client'
-// Importing React and useState hook from React library
 import React, { useState } from 'react';
-// Importing a navigation component for the PS5 list page
 import ListPs5Nav from '../component/listPs5Nav';
 
-// Defining a functional component named Listps5
 const Listps5 = () => {
-  // State hooks to manage the image and product name
   const [image, setImage] = useState(null);
   const [productName, setProductName] = useState('Name of Product');
 
-  // Event handler for drag over event to prevent the default behavior
   const handleDragOver = (e) => {
     e.preventDefault();
   };
 
-  // Event handler for drop event to handle file drop
   const handleDrop = (e) => {
     e.preventDefault();
-    const file = e.dataTransfer.files[0]; // Accessing the dropped file
+    const file = e.dataTransfer.files[0];
     if (file && file.type.startsWith('image/')) {
       const reader = new FileReader();
       reader.onload = (readEvent) => {
-        setImage(readEvent.target.result); // Setting the image URL to display the image
+        setImage(readEvent.target.result);
       };
-      reader.readAsDataURL(file); // Reading the file as a Data URL
+      reader.readAsDataURL(file);
     }
   };
 
-  // JSX to render the component
   return (
     <>
       <ListPs5Nav />
-      <div className='flex flex-auto justify-center gap-10'>
-      <div className='flex justify-center'>
-        <div className='relative'>
-          <div
-            className='border-2 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-96 h-64 flex justify-center items-center'
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            {image ? (
-              <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-            ) : (
-              <p>Drag and drop an image here</p>
-            )}
+      {/* Top Image Grid - Responsive */}
+      <div className='flex flex-col md:flex-row justify-center gap-4 md:gap-10 px-4 md:px-8 mb-8'>
+        {/* First Image Container */}
+        <div className='w-full md:w-96'>
+          <div className='relative'>
+            <div
+              className='border-2 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-full h-64 flex justify-center items-center'
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+            >
+              {image ? (
+                <img src={image} alt="Uploaded" className='w-full h-full object-cover rounded-lg' />
+              ) : (
+                <p className='text-center text-sm md:text-base'>Drag and drop an image here</p>
+              )}
+            </div>
+            <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
           </div>
-          <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
+        </div>
+
+        {/* Second Image Container */}
+        <div className='w-full md:w-96'>
+          <div className='relative'>
+            <div
+              className='border-2 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-full h-64 flex justify-center items-center'
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+            >
+              {image ? (
+                <img src={image} alt="Uploaded" className='w-full h-full object-cover rounded-lg' />
+              ) : (
+                <p className='text-center text-sm md:text-base'>Drag and drop an image here</p>
+              )}
+            </div>
+            <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
+          </div>
         </div>
       </div>
 
-      <div className='flex justify-center'>
-        <div className='relative'>
-          <div
-            className='border-2 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-96 h-64 flex justify-center items-center'
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            {image ? (
-              <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-            ) : (
-              <p>Drag and drop an image here</p>
-            )}
-          </div>
-          <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
-        </div>
-      </div>
-      </div>
-
-      <div className='flex flex-col'>
-        <div className='flex justify-normal py-10 w-full px-72 '>
-          <div className='flex gap-4'>
-            {/* Additional image drop areas and product information input fields */}
-            <div className='relative flex'>
-              <div
-                className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-[250px] h-64 flex justify-center items-center'
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}
-              >
-                {image ? (
-                  <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-                ) : (
-                  <p>Drag and drop an image here</p>
-                )}
+      {/* Product Cards Section */}
+      <div className='flex flex-col space-y-8 w-full px-4 md:px-8 lg:px-72'>
+        {/* Product Card - Repeated 3 times */}
+        {[1, 2, 3].map((index) => (
+          <div key={index} className='flex flex-col md:flex-row gap-4'>
+            <div className='relative flex flex-col md:flex-row w-full gap-4'>
+              {/* Thumbnail Image */}
+              <div className='w-full md:w-[250px]'>
+                <div
+                  className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 h-64 flex justify-center items-center'
+                  onDragOver={handleDragOver}
+                  onDrop={handleDrop}
+                >
+                  {image ? (
+                    <img src={image} alt="Uploaded" className='w-full h-full object-cover rounded-lg' />
+                  ) : (
+                    <p className='text-center text-sm md:text-base'>Drag and drop an image here</p>
+                  )}
+                </div>
+                <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
               </div>
-              <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
-              {/* Product information section */}
-              <div
-            className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-[750px] h-64 flex justify-center items-center'
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            {image ? (
-              <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-            ) : (
-              <p>Drag and drop an image here</p>
-            )}
-          </div>
-              <div className='absolute end-0 top-20'>
-                <div className='flex flex-col justify-center items-start p-3 rounded-lg -mx-40 bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300'>
-                  <div className='text-white'>
+
+              {/* Main Product Image */}
+              <div className='w-full md:w-[750px]'>
+                <div
+                  className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 h-64 flex justify-center items-center'
+                  onDragOver={handleDragOver}
+                  onDrop={handleDrop}
+                >
+                  {image ? (
+                    <img src={image} alt="Uploaded" className='w-full h-full object-cover rounded-lg' />
+                  ) : (
+                    <p className='text-center text-sm md:text-base'>Drag and drop an image here</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Product Info Card */}
+              <div className='relative md:absolute md:end-0 md:top-20 w-full md:w-auto'>
+                <div className='flex flex-col justify-center items-start p-4 rounded-lg md:-mx-40 bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300'>
+                  <div className='text-white w-full'>
                     <input
                       type="text"
                       value={productName}
                       onChange={(e) => setProductName(e.target.value)}
-                      className="bg-transparent text-green-400 text-lg font-bold outline-none"
+                      className="w-full bg-transparent text-green-400 text-lg font-bold outline-none mb-2"
                     />
-                    <div className='flex justify-between text-center'>
+                    <div className='flex justify-between items-center'>
                       <input
                         type="text"
                         placeholder="Rp Fill the Price"
                         className='text-green-400 bg-transparent outline-none'
                       />
-                      <img src='/edit-icon2.svg' width={50} height={50} className=' top-0 right-0 p-2 -mx-[60px]'/>
+                      <img src='/edit-icon2.svg' width={40} height={40} className='ml-2'/>
                     </div>
                   </div>
-                  <button className='mt-2 bg-transparent border border-green-400 hover:bg-green-400 hover:text-white text-green-400 font-bold py-2 px-4 rounded-full w-full'>
+                  <button className='mt-4 w-full bg-transparent border border-green-400 hover:bg-green-400 hover:text-white text-green-400 font-bold py-2 px-4 rounded-full transition-colors'>
                     ADD TO CART
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
 
-        <div className='flex justify-normal py-10 w-full px-72 '>
-          <div className='flex gap-4'>
-            {/* Additional image drop areas and product information input fields */}
-            <div className='relative flex'>
-              <div
-                className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-[250px] h-64 flex justify-center items-center'
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}
-              >
-                {image ? (
-                  <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-                ) : (
-                  <p>Drag and drop an image here</p>
-                )}
-              </div>
-              <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
-              {/* Product information section */}
-              <div
-            className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-[750px] h-64 flex justify-center items-center'
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            {image ? (
-              <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-            ) : (
-              <p>Drag and drop an image here</p>
-            )}
-          </div>
-              <div className='absolute end-0 top-20'>
-                <div className='flex flex-col justify-center items-start p-3 rounded-lg -mx-40 bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300'>
-                  <div className='text-white'>
-                    <input
-                      type="text"
-                      value={productName}
-                      onChange={(e) => setProductName(e.target.value)}
-                      className="bg-transparent text-white text-lg font-bold outline-none"
-                    />
-                    <div className='flex justify-between text-center'>
-                      <input
-                        type="text"
-                        placeholder="Rp Fill the Price"
-                        className='text-green-400 bg-transparent outline-none'
-                      />
-                      <img src='/edit-icon2.svg' width={50} height={50} className=' top-0 right-0 p-2 -mx-[60px]'/>
-                    </div>
-                  </div>
-                  <button className='mt-2 bg-transparent border border-green-400 hover:bg-green-400 hover:text-white text-green-400 font-bold py-2 px-4 rounded-full w-full'>
-                    ADD TO CART
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className='flex justify-normal py-10 w-full px-72 '>
-          <div className='flex gap-4'>
-            {/* Additional image drop areas and product information input fields */}
-            <div className='relative flex'>
-              <div
-                className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-[250px] h-64 flex justify-center items-center'
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}
-              >
-                {image ? (
-                  <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-                ) : (
-                  <p>Drag and drop an image here</p>
-                )}
-              </div>
-              <img src='/edit-icon2.svg' width={50} height={50} className='absolute top-0 right-0 p-2'/>
-              {/* Product information section */}
-              <div
-            className='border-4 rounded-lg bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300 w-[750px] h-64 flex justify-center items-center'
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            {image ? (
-              <img src={image} alt="Uploaded" className='w-full h-full object-cover' />
-            ) : (
-              <p>Drag and drop an image here</p>
-            )}
-          </div>
-              <div className='absolute end-0 top-20'>
-                <div className='flex flex-col justify-center items-start p-3 rounded-lg -mx-40 bg-gradient-to-t from-[#A5A5A5] to-[#0E0E0E] border-gray-300'>
-                  <div className='text-white'>
-                    <input
-                      type="text"
-                      value={productName}
-                      onChange={(e) => setProductName(e.target.value)}
-                      className="bg-transparent text-white text-lg font-bold outline-none"
-                    />
-                    <div className='flex justify-between text-center'>
-                      <input
-                        type="text"
-                        placeholder="Rp Fill the Price"
-                        className='text-green-400 bg-transparent outline-none'
-                      />
-                      <img src='/edit-icon2.svg' width={50} height={50} className=' top-0 right-0 p-2 -mx-[60px]'/>
-                    </div>
-                  </div>
-                  <button className='mt-2 bg-transparent border border-green-400 hover:bg-green-400 hover:text-white text-green-400 font-bold py-2 px-4 rounded-full w-full'>
-                    ADD TO CART
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button className='absolute top-[1450px] my-2 left-1/2 transform -translate-x-1/2'><img src='/arrow-down.svg' width={25} height={25}/></button>
-
-        
+        {/* Load More Button */}
+        <button className='fixed bottom-8 left-1/2 transform -translate-x-1/2 z-10 hover:opacity-80 transition-opacity'>
+          <img src='/arrow-down.svg' width={25} height={25} alt="Load more"/>
+        </button>
       </div>
     </>
   );
 };
 
-// Exporting the Listps5 component as the default export
 export default Listps5;
